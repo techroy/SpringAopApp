@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+	<bean id="mathCalc" class="com.aop.beans.MathCalc" />
+	
+	<!-- <bean id="aspect" class="com.aop.aspect.AnnotationLoggerAspect"></bean> -->
+
+<!-- 	<bean id="loanCalc" class="com.aop.beans.LoanCalculator" />
+
+	<bean id="otpGenerator" class="com.aop.beans.OtpGenerator" />
+
+	<bean id="throwerBean" class="com.aop.beans.ThrowerClass" />
+
+	<bean id="logAspect" class="com.aop.aspect.LoggerAspect" />
+
+	<bean id="secAspect" class="com.aop.aspect.SecurityAspect" />
+
+	<bean id="otpAspect" class="com.aop.aspect.OtpGeneratorCheckAspect" />
+
+	<bean id="throwsAspect" class="com.aop.aspect.ThrowsAspect" />
+
+	<aop:config>
+
+		<aop:pointcut id="logPointCut"
+			expression="execution(* com.aop.beans.MathCalc.*(..) )" />
+
+		<aop:pointcut expression="execution(* com.aop.beans.LoanCalculator.*(..) )"
+			id="loanCalcPointCut" />
+
+
+		<aop:pointcut expression="execution(* com.aop.beans.OtpGenerator.*(..) )"
+			id="otpPointCut" />
+
+
+		<aop:pointcut expression="execution(* com.aop.beans.ThrowerClass.*(..) )"
+			id="throwsPointCut" />
+
+
+		<aop:aspect ref="logAspect">
+
+			<aop:around method="log" pointcut-ref="logPointCut" />
+		</aop:aspect>
+
+		<aop:aspect ref="secAspect">
+
+			<aop:before method="securityCheck" pointcut-ref="loanCalcPointCut" />
+
+		</aop:aspect>
+
+		<aop:aspect ref="otpAspect">
+			<aop:after-returning method="checkOtp"
+				pointcut-ref="otpPointCut" returning="otp" />
+
+		</aop:aspect>
+
+		<aop:aspect ref="throwsAspect">
+
+			<aop:after-throwing method="logExcep"
+				pointcut-ref="throwsPointCut" throwing="e" />
+		</aop:aspect>
+
+	</aop:config>
+ -->
+
+
+<aop:aspectj-autoproxy/>
+
+<context:component-scan base-package="com.aop"/>
+
+
+
+
+</beans>
+
+
